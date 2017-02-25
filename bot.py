@@ -21,10 +21,10 @@ async def on_message(message):
 
         await client.edit_message(tmp, 'You have {} messages.'.format(counter))
 
-    if message.content.startswith('How many wood planks are in a wood block?'):
-        Ugly = await client.send_message(message.channel, '3 wood planks')
-        await asyncio.sleep(6)
-        await client.edit_message(Ugly, '4 wood planks')
+    if message.content.startswith('How much of a minecrafter is Jarrod?'):
+        Ugly = await client.send_message(message.channel, 'Not at all')
+        await asyncio.sleep(10)
+        await client.edit_message(Ugly, 'A huge minecrafter')
 
 
     elif message.content.startswith('!sleep'):
@@ -38,7 +38,17 @@ async def on_member_join(member):
 
 @client.event
 async def on_message_edit(before, after):
-    await client.send_message(before.channel,'{} Changed a Mistake.'.format(before.author.name))
+    if before.author.bot:
+        return
+    await client.send_message(before.channel,'{} Fucked up.'.format(before.author.name))
+
+@client.event
+async def on_reaction_remove(reaction, user):
+    await client.send_message(reaction.message.channel,'uh oh {} '.format(user.name))
+
+
+
+
 
 
 
