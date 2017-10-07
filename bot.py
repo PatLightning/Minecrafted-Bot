@@ -52,4 +52,4 @@ async def on_reaction_remove(reaction, user):
 
 
 
-client.run('Mjg0MTk2NzQxNjU2MzQ2NjI0.C5AIfw.n2ElstrFkJmhI24FYG-KOwXdDU0')
+client.run('token')
